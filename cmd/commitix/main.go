@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"sasy/pkg/sasy"
-	"sasy/utils"
+	"commitix/pkg/commitix"
+	"commitix/utils"
 )
 
 func main() {
@@ -14,15 +14,15 @@ func main() {
 	// If no args are provided
 	if len(args) == 0 {
 		// TODO: To display help section when no args provided
-		fmt.Println("sasy: no commands provided")
-		fmt.Println(sasy.Usage())
+		fmt.Println("commitix: no commands provided")
+		fmt.Println(commitix.Usage())
 		os.Exit(1)
 	}
 
-	cmd, ok := sasy.Commands[args[0]]
+	cmd, ok := commitix.Commands[args[0]]
 	if !ok {
-		fmt.Println("sasy: not a valid command")
-		fmt.Println(sasy.Usage())
+		fmt.Println("commitix: not a valid command")
+		fmt.Println(commitix.Usage())
 		os.Exit(1)
 	}
 

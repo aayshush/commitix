@@ -2,10 +2,10 @@
 options=("init" "commit" "add")
 
 # Function to handle autocomplete
-_sasy_autocomplete() {
+_commitix_autocomplete() {
     local cur="${COMP_WORDS[COMP_CWORD]}"
     COMPREPLY=( $(compgen -W "${options[*]}" -- "$cur") )
 }
 
-# Register the autocomplete function for the 'sasy' command
-complete -F _sasy_autocomplete sasy
+# Register the autocomplete function for the 'commitix' command
+complete -F _commitix_autocomplete commitix

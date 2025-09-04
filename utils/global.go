@@ -6,10 +6,10 @@ import (
 )
 
 // Directories to ignore
-var IgnoreDirs = []string{".sasy"}
+var IgnoreDirs = []string{".commitix"}
 
 var (
-	SasyPath   string
+	commitixPath   string
 	WorkindDir string
 )
 
@@ -19,6 +19,6 @@ func Init() error {
 	} else {
 		WorkindDir = wd
 	}
-	SasyPath = path.Join(WorkindDir, ".sasy")
+	commitixPath = path.Join(WorkindDir, ".commitix")
 	return nil
 }

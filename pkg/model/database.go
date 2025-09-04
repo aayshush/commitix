@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 	"path"
-	"sasy/utils"
+	"commitix/utils"
 )
 
 type Database struct {
@@ -15,7 +15,7 @@ type Database struct {
 func CreateDatabase(workdir string) (*Database, error) {
 	d := &Database{}
 	d.workingDir = workdir
-	d.objectsDir = path.Join(d.workingDir, ".sasy", "objects")
+	d.objectsDir = path.Join(d.workingDir, ".commitix", "objects")
 	return d, nil
 }
 

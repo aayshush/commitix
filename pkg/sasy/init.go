@@ -1,30 +1,30 @@
-package sasy
+package commitix
 
 import (
 	"fmt"
 	"os"
 	"path"
-	"sasy/utils"
+	"commitix/utils"
 )
 
 // TODO: Change Permission Mode for the directories and files
 func InitHandler(args []string) error {
 
-	if err := os.MkdirAll(utils.SasyPath, os.ModePerm); err != nil {
-		return fmt.Errorf("error in creating .sasy: %v", err)
+	if err := os.MkdirAll(utils.commitixPath, os.ModePerm); err != nil {
+		return fmt.Errorf("error in creating .commitix: %v", err)
 	}
 	subdirs := []string{"objects", "refs"}
 	for i := range subdirs {
-		if err := os.MkdirAll(path.Join(utils.SasyPath, subdirs[i]), os.ModePerm); err != nil {
+		if err := os.MkdirAll(path.Join(utils.commitixPath, subdirs[i]), os.ModePerm); err != nil {
 			return fmt.Errorf("error in creating %s; %v", subdirs, err)
 		}
 	}
 
-	headPath := path.Join(utils.SasyPath, "HEAD")
+	headPath := path.Join(utils.commitixPath, "HEAD")
 	if err := os.WriteFile(headPath, []byte{}, 0664); err != nil {
 		return fmt.Errorf("error in creating HEAD: %v", err)
 	}
 
-	fmt.Printf("Initialized empty Sasy repository in %s\n", utils.SasyPath)
+	fmt.Printf("Initialized empty commitix repository in %s\n", utils.commitixPath)
 	return nil
 }

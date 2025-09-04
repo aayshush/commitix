@@ -2,9 +2,9 @@
 
 For autocompleting commands source the `./autocomplete.sh` script
 
-## Using SASY
+## Using commitix
 
-To use `sasy` on all your folders in your desktop you can export the executable in your `PATH` variable.
+To use `commitix` on all your folders in your desktop you can export the executable in your `PATH` variable.
 
 
 ```bash

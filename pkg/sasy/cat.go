@@ -1,12 +1,12 @@
-package sasy
+package commitix
 
 import (
 	"bytes"
 	"compress/zlib"
 	"io"
 	"os"
-	"sasy/pkg/model"
-	"sasy/utils"
+	"commitix/pkg/model"
+	"commitix/utils"
 )
 
 func CatFileHandler(args []string) error {

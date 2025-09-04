@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"os"
 	"path"
-	"sasy/utils"
+	"commitix/utils"
 	"sort"
 )
 
@@ -138,7 +138,7 @@ func (index *Index) Modify(path string, d os.DirEntry, Oid string) error {
 
 func (index *Index) Save() error {
 
-	file, _ := os.OpenFile(path.Join(utils.SasyPath, "index"), os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0644)
+	file, _ := os.OpenFile(path.Join(utils.commitixPath, "index"), os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0644)
 	defer file.Close()
 
 	// This buffer will store the whole content and will be used to hash the whole file and write checksum for the file at the end

@@ -3,7 +3,7 @@ package model
 import (
 	"fmt"
 	"os"
-	"sasy/utils"
+	"commitix/utils"
 )
 
 type Blob struct {

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 	"path"
-	"sasy/utils"
+	"commitix/utils"
 )
 
 type Tree struct {
@@ -27,7 +27,7 @@ func CreateTree(cd string) (*Tree, error) {
 	}
 
 	for _, dirEntry := range dirEntries {
-		if dirEntry.Name() == ".sasy" {
+		if dirEntry.Name() == ".commitix" {
 			continue
 		}
 

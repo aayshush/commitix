@@ -1,10 +1,10 @@
-package sasy
+package commitix
 
 import (
 	"flag"
 	"fmt"
-	"sasy/pkg/model"
-	"sasy/utils"
+	"commitix/pkg/model"
+	"commitix/utils"
 	"strings"
 )
 
@@ -42,7 +42,7 @@ func CommitHandler(args []string) error {
 
 	author := model.NewAuthor()
 
-	refs := model.Refs{Path: utils.SasyPath}
+	refs := model.Refs{Path: utils.commitixPath}
 	// Reading commit id of parent from refs
 	parent, err := refs.ReadHead()
 	if err != nil {

@@ -1,4 +1,4 @@
-package sasy
+package commitix
 
 import (
 	"fmt"
@@ -6,8 +6,8 @@ import (
 	"os"
 	"path"
 	"path/filepath"
-	"sasy/pkg/model"
-	"sasy/utils"
+	"commitix/pkg/model"
+	"commitix/utils"
 	"sort"
 )
 
@@ -17,15 +17,15 @@ func AddHandler(arg []string) error {
 	}
 
 	// Create index File if it does not exist
-	file, err := os.OpenFile(path.Join(utils.SasyPath, "index"), os.O_CREATE|os.O_RDWR, 0644)
+	file, err := os.OpenFile(path.Join(utils.commitixPath, "index"), os.O_CREATE|os.O_RDWR, 0644)
 	if err != nil {
-		return fmt.Errorf("error opening .sasy/index: %v", err)
+		return fmt.Errorf("error opening .commitix/index: %v", err)
 	}
 	defer file.Close()
 
 	index, err := model.ParseIndex(file)
 	if err != nil {
-		return fmt.Errorf("error parsing .sasy/index: %v", err)
+		return fmt.Errorf("error parsing .commitix/index: %v", err)
 	}
 
 	database, err := model.CreateDatabase(utils.WorkindDir)

@@ -1,4 +1,4 @@
-package sasy
+package commitix
 
 var Commands = map[string]func([]string) error{
 	"init":     InitHandler,
@@ -8,7 +8,7 @@ var Commands = map[string]func([]string) error{
 }
 
 func Usage() string {
-	s := "Usage: sasy [command] [options]\nAvailable commands:\n"
+	s := "Usage: commitix [command] [options]\nAvailable commands:\n"
 	for k := range Commands {
 		s += " - " + k + "\n"
 	}
